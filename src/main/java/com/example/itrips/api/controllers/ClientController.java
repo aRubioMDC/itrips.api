@@ -18,16 +18,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 @CrossOrigin("*")
 public class ClientController {
     @Autowired
-    ClientService operatorService;
+    ClientService clientService;
 
     @GetMapping(path = "/getClients")
     public ArrayList<ClientModel> getClients() {
-        return operatorService.getClients();
+        return clientService.getClients();
     }
 
     @PostMapping(value = "/saveClient")
     public ClientModel saveClient(@RequestBody ClientModel client) {
-        return this.operatorService.saveClient(client);
+        return this.clientService.saveClient(client);
     }
 
 }
